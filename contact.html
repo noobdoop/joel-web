@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
+    <script src='website.js' defer></script>
+</head>
+<body>
+    <div class="sticky navbar">
+        <ul>
+            <li class="nav" id="home"><a href='index.html'class="nav-link">Home</a></li>
+            <li class="nav"><a  href="gallery.html"class="nav-link">Gallery</a></li>
+            <li class="nav"> <a href="about.html" class="nav-link">About</a></li>
+            <li class="nav"> <a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+    <div class="form">
+        <h2>Type what you want to tell me!</h2>
+            <form action="response.html" method="get" onsubmit="response()">
+                <div class="group">
+                    <label for="name"> Name: </label>
+                    <input type="text" id="name" required placeholder="Your Name"> 
+                </div>
+    
+            <div class="group">
+                <label for="num"> Phone Number: <br>
+                    <input type="tel" id="num" required pattern="[0-9]{8}" placeholder="12345678" class="align"> 
+                </label>
+                </div>
+                <BR>
+                <div class="group">
+                    <label for="msg">Enter your message: <br>
+                        <textarea id="msg"rows=8 cols="50" required></textarea>
+                    </label>
+                </div>
+                <br>
+                <div class="group">
+                    <button class="button-64" role="button" type="submit"><span class="text">Submit</span></button>
+                </div>
+            </form>
+    </div>
+    
+    <div class="footer">
+        <p>My socials</p>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com" class="social-icon"><img src="photos/fb.png" height=100vh width="100vw"></a>
+            <a href="https://www.instagram.com" class="social-icon"><img src="photos/ig.png"height=100vh width="100vw"></a>
+            <a href="https://www.twitter.com" class="social-icon"><img src="photos/tt.png"height=100vh width="100vw"></a>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 Joel Yeo. All Rights Reserved.
+            Designed by Joel Yeo.</p>
+        </div>
+    </div>
+</body>
+</html>

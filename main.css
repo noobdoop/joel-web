@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+/*navbar*/
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+.nav .nav-link:hover {
+  background: linear-gradient(to right, #FFD700, #FF1493, #00FFFF, #32CD32);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  display: inline;
+  padding: 0px 20px;
+  font-size: 1.3em;
+  height: 6vh; /* Adjust the height to make the navbar thicker */
+  line-height: 6vh; /* Set the line-height to vertically center the text */
+}
+
+
+.navbar {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid white;
+  
+}
+  .sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; /* You can change the background color when the navbar becomes sticky */
+    z-index: 1000;
+    border-bottom:0px
+  }
+
+  @media (max-width: 768px),(max-width: 480px) {
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  
+   
+  }
+
+  #home{
+  }
+
+  .home-margin{
+    margin-right:75vw;
+  }
+/*footer */
+.footer{
+  text-align:center;
+  font-size:2em;
+  background-color: rgb(128, 195, 250);
+}
+
+.footer p {
+  color:black;
+  margin: 5px 0;
+}
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+  flex-wrap:wrap;
+  overflow:hidden;
+}
+
+.social-icon {
+  margin: 10px;
+  transition: transform 0.3s;
+
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+  /* general stuff */
+* {
+    overflow-x:hidden;
+    font-family: 'Poppins';
+    color:white;
+    user-select: none;
+    box-sizing:border-box;
+  }
+
+  body{
+    background-color: black;
+
+  }
+  body::-webkit-scrollbar{ /*makes it scrollable without a scrollbar */
+    display: none;
+    
+  }
+  
+ 
+/* home page */
+
+  .intro{
+    text-align:center;
+    color:white;
+    font-size:2em;
+    animation: introtext 3s;
+  }
+
+  @keyframes introtext{
+    0%{
+      opacity:0;
+    }
+
+   
+    100%{
+      opacity:1;
+      font-size:2em;
+    }
+  }
+.time{
+  margin-top:5vh;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  flex-wrap:wrap;
+
+}
+.clock,
+.calendarResult {
+  font-size: 4em;
+  color: white;
+}
+
+#calendar{
+  position:relative;
+  left:10vw;
+}
+#clock{
+  right:20px;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.scroll {
+  animation: scroll 1s;
+  animation-delay: 2s;
+  text-align: center;
+  font-size: 2em;
+  /* Set the initial position of the element below the screen */
+  transform: translateY(40%);
+  opacity: 0; /* Set initial opacity to 0 to hide the text */
+  animation-fill-mode:forwards;
+  background-color: transparent;
+  margin-bottom:2vh;
+  height:80vh;
+  
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(50%); /* Start from below the screen */
+  }
+  100% {
+    transform: translateY(0); /* Shift the element up to its original position */
+    opacity: 1; /* Change opacity to 1 to make the text fully visible */
+  }
+}
+/* gallery page in home*/
+.parallax {
+  /* The image used */
+  background-image: url(photos/gallery.png);
+
+  /* Set a specific height */
+  min-height: 70vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center 1vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-image: url(photos/gallerysmall.png);
+  background-size:4/3;
+  }
+}
+
+/* Adjust min-width for even smaller screens (e.g., mobile phones) */
+
+.gallery{
+  height:auto;
+  overflow:hidden;
+  min-width:20%;
+}
+
+.gallery p{
+  font-size:3em;
+  text-align:center;
+}
+
+.gallery span{
+  text-align:center;
+  font-size:3em;
+}
+
+.gallery-text{
+  text-align:center;
+  font-size:3em;
+  height:30vh;
+}
+/*gallery page */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  
+}
+
+@media (max-width: 768px),(max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .photo {
+   grid-row:auto;
+  }
+}
+.photo img {
+  width: 100%;
+  height: auto;
+  object-fit:cover;
+ 
+}
+
+#portrait{
+  height:100%;
+  width:auto;
+}
+
+
+.photo-description {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-desc {
+  animation: fade-in 1s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide-desc {
+  animation: fade-out 1s;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; visibility: visible; }
+  100% { opacity: 1; visibility: visible; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.gradient-text p{
+  font-size: 4em;
+  text-align: center;
+  background: linear-gradient(to right, #FFD700, #FF1493, #00FFFF, #32CD32);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 2;
+}
+
+
+/* about page in home*/
+.about {
+  text-align: center;
+  font-size: 3em;
+  transform: translateX(100%);
+  overflow: hidden;
+  animation-iteration-count: infinite;
+  background-color: rgba(153, 149, 184, 0.599);
+  cursor: pointer; /* Add pointer cursor to indicate the div is clickable */
+  height:auto;
+}
+
+
+.about.animate {
+  animation: aboutAnimation 1s;
+  animation-fill-mode:forwards
+}
+
+.about.animateBack {
+  animation: aboutBackAnimation 1s;
+}
+
+
+@keyframes aboutAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes aboutBackAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/*about page */
+.aboutme {
+  height: 50vh; /* Adjust the height to your preference */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.aboutme tr:nth-child(2) td {
+  filter: blur(3px);
+}
+.aboutme table td:hover{
+  transition: filter 0.2s;
+  filter:blur(0px);
+}
+.aboutme h2{
+  text-align: center;
+}
+
+.schedule{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity:0;
+  margin-bottom:5%;
+  overflow-x:auto;
+}
+
+.schedule td{
+  text-align: center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+@media(max-width:768px){
+  td{font-size:12px;}
+}
+.clicked{
+  animation:fade-in 1s;
+  animation-fill-mode: forwards;
+}
+.col{
+  transition:background-color 0.3s, color 0.3s
+}
+
+.col:hover{
+  background-color: white;
+  color:black;
+}
+
+.schedule td:hover{
+  transition: filter 0.3s; filter:brightness(110)
+}
+
+@media screen and (max-width: 768px) {
+  
+  .schedule{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity:0;
+    margin-bottom:5%;
+    flex-shrink:1
+  }
+  
+}
+
+#infocomm{
+  color:rgb(19, 168, 242)
+}
+
+#law{
+  color:rgb(109, 231, 143)
+}
+
+#math{
+  color:rgb(174, 81, 233)
+}
+
+#web{
+  color:rgb(237, 161, 20)
+}
+
+#ecs{
+  color:rgb(232, 113, 127)
+}
+
+#ffl{
+  color:rgb(189, 214, 231)
+}
+
+#prg{
+  color:rgb(185, 245, 245)
+}
+
+#fie{
+  color:rgb(255, 1, 1)
+}
+
+#pem{
+  color:greenyellow
+}
+/* contact content in home */
+.parallax2 {
+  /* The image used */
+  background-image: url(photos/contact.png);
+  background-size:16/9;
+
+  /* Set a specific height */
+  min-height: 80vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center 1vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width:768px){
+.parallax2{
+  background-image: url(photos/contactsmall.png);
+  background-size:4/3;
+}
+}
+
+
+.contact{
+  font-size:3em;
+  text-align:center;
+}
+
+/*contact page */
+
+
+.form {
+  margin: 10vh auto 20vh;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #18c2fb;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .form {
+    overflow-y: scroll; /* Add vertical scroll for small screens */
+  }
+
+  .group {
+    margin-bottom: 10px; /* Reduce the margin for better spacing on small screens */
+  }
+}
+
+
+.form h2 {
+  text-align: center;
+  color: white;
+}
+
+.align{
+  align-items: center;
+}
+
+
+
+input, textarea {
+  color: black;
+}
+
+.group {
+  display: flex; /* Align elements horizontally */
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
